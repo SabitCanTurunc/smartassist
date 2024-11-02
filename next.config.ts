@@ -4,7 +4,14 @@ import { hostname } from "os";
 const nextConfig: NextConfig = {
   reactStrictMode:false,
   images:{
-    remotePatterns:[{
+    remotePatterns:[
+      {
+        protocol:'https',
+        hostname:'ucarecdn.com',
+  
+  
+
+    },{
       protocol:'https',
       hostname:'wordpress-1357143-4991798.cloudwaysapps.com',
     }]
