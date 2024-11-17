@@ -4,7 +4,6 @@ import { UseFormRegister } from 'react-hook-form'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import RealTimeMode from './real-time'
 import Image from 'next/image'
-
 import { BOT_TABS_MENU } from '@/constants/menu'
 import ChatIcon from '@/icons/chat-icon'
 import { TabsContent } from '../ui/tabs'

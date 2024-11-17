@@ -16,8 +16,6 @@ const DomainSettingsPage = async ({ params }: Props) => {
     <>
       <InfoBar />
       <div className="overflow-y-auto w-full chat-window flex-1 h-0">
-        <h1>domain settings </h1>
-        <h2>settings form</h2>
         <SettingsForm
           plan={domain.subscription?.plan!}
           chatBot={domain.domains[0].chatBot}
