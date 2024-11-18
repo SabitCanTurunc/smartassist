@@ -1,8 +1,8 @@
 import React from 'react'
+import BreadCrumb from './bread-crumb'
 import { Card } from '../ui/card'
 import { Headphones, Star, Trash } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
-import BreadCrumb from './bread-crumb'
 
 type Props = {}
 
@@ -23,7 +23,7 @@ const InfoBar = (props: Props) => {
           </AvatarFallback>
         </Avatar>
         <Avatar>
-          <AvatarImage
+        <AvatarImage
             src="https://res.cloudinary.com/dquzrdxog/image/upload/v1728334605/CarRental/2016a9a3-deea-4454-a761-f17460d1c6d1.png"
             alt="@TirbusoN"
           />

@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
+import { Loader } from '../loader'
 import { Switch } from '../ui/switch'
 import useSideBar from '@/contexts/use-sidebar'
-import { Loader } from '../loader'
 
 type Props = {}
 
@@ -21,14 +21,18 @@ const BreadCrumb = (props: Props) => {
     <div className="flex flex-col ">
       <div className="flex gap-5 items-center">
         <h2 className="text-3xl font-bold capitalize">{page}</h2>
-        {page === "conversation" && chatRoom && (<Loader loading={loading} className='p-0 inline'>
-          <Switch
-            defaultChecked={realtime}
-            onClick={(e) => onActivateRealtime(e)}
-            className="data-[state=checked]:bg-orange data-[state=unchecked]:bg-peach"
-          />
-        </Loader>)}
-
+        {page === 'conversation' && chatRoom && (
+          <Loader
+            loading={loading}
+            className="p-0 inline"
+          >
+            <Switch
+              defaultChecked={realtime}
+              onClick={(e) => onActivateRealtime(e)}
+              className="data-[state=checked]:bg-orange data-[state=unchecked]:bg-peach"
+            />
+          </Loader>
+        )}
       </div>
       <p className="text-gray-500 text-sm">
         {page == 'settings'
