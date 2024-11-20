@@ -1,5 +1,5 @@
 import { ChatBotMessageProps } from '@/schemas/conversation.schema'
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import RealTimeMode from './real-time'
@@ -41,15 +41,7 @@ type Props = {
     answer: string
     domainId: string | null
   }[]
-  setChat: React.Dispatch<
-    React.SetStateAction<
-      {
-        role: 'user' | 'assistant'
-        content: string
-        link?: string | undefined
-      }[]
-    >
-  >
+  setChat: React.Dispatch<React.SetStateAction<{ role: 'user' | 'assistant'; content: string; link?: string | undefined }[]>>
 }
 
 export const BotWindow = forwardRef<HTMLDivElement, Props>(
@@ -70,7 +62,13 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
     },
     ref
   ) => {
-    console.log(errors)
+    // Kaydırma işlemi için useEffect
+    useEffect(() => {
+      if (ref && 'current' in ref && ref.current) {
+        ref.current.scrollTop = ref.current.scrollHeight
+      }
+    }, [chats]) // Chats değiştiğinde kaydırma yapılacak
+
     return (
       <div className="h-[670px] w-[450px] flex flex-col bg-white rounded-xl mr-[80px] border-[1px] overflow-hidden">
         <div className="flex justify-between px-4 pt-4">
@@ -166,7 +164,6 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
                 </CardDescription>
               </div>
               <Separator orientation="horizontal" />
-
               {helpdesk.map((desk) => (
                 <Accordion
                   key={desk.id}

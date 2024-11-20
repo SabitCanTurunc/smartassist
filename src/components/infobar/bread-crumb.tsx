@@ -18,7 +18,7 @@ const BreadCrumb = (props: Props) => {
     realtime,
   } = useSideBar()
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col px-5">
       <div className="flex gap-5 items-center">
         <h2 className="text-3xl font-bold capitalize">{page}</h2>
         {page === 'conversation' && chatRoom && (
@@ -34,7 +34,7 @@ const BreadCrumb = (props: Props) => {
           </Loader>
         )}
       </div>
-      <p className="text-gray-500 text-sm">
+      <p className="text-gray-500 bg-white rounded-md  text-sm">
         {page == 'settings'
           ? 'Manage your account settings, preferences and integrations'
           : page == 'dashboard'
