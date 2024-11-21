@@ -22,7 +22,7 @@ const config = {
         cream: '#F5F5F5',
         gravel: '#4E4E4E',
         iridium: '#3F3F3F',
-        orange: '#FFA947',
+        orange: '#f36902',
         peach: '#FFE0BD',
         platinum: '#E6E6E6',
         ghost: '#CDCDCD',
@@ -62,6 +62,12 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        // Yeni renkler burada ekleniyor
+        darkBlue: '#091057',
+        blue: '#024CAA',
+        orangeDark: '#EC8305',
+        lightGray: '#DBD3D3',
+        lightBlack:'#28282d',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -105,6 +111,6 @@ const config = {
     },
   },
   plugins: [require('tailwindcss-animate')],
-} satisfies Config
+}
 
 export default config

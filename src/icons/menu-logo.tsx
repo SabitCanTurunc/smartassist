@@ -10,8 +10,8 @@ export const MenuLogo = ({ onClick, src }: MenuLogoProps) => {
     <img
       onClick={onClick}
       src={src}          
-      width="30"
-      height="30"
+      width="50"
+      height="80"
       alt="Logo"         
       style={{ cursor: 'pointer' }}
     />

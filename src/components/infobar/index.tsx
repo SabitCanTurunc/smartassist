@@ -8,8 +8,8 @@ type Props = {}
 
 const InfoBar = (props: Props) => {
   return (
-    <div className="flex w-full justify-between items-center py-1 mb-8  bg-orange">
-      <BreadCrumb />
+    <div className="flex w-full justify-between items-center py-1 mb-8 bg-black ">
+      <BreadCrumb/>
       <div className="flex gap-3 items-center">
         <div>
           <Card className="rounded-xl flex gap-3 py-3 px-4 text-ghost">
@@ -18,13 +18,13 @@ const InfoBar = (props: Props) => {
           </Card>
         </div>
         <Avatar>
-          <AvatarFallback className="bg-orange text-white">
+          <AvatarFallback className="bg-orangeDark text-white">
             <Headphones />
           </AvatarFallback>
         </Avatar>
         <Avatar>
         <AvatarImage
-            src="https://res.cloudinary.com/dquzrdxog/image/upload/v1728334605/CarRental/2016a9a3-deea-4454-a761-f17460d1c6d1.png"
+            src="Images/logo2.gif"
             alt="@TirbusoN"
           />
           <AvatarFallback>CN</AvatarFallback>

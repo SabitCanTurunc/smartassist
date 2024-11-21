@@ -13,54 +13,56 @@ import { getMonthName } from "@/lib/utils";
 export default async function Home() {
   const posts:
     | {
-        id: string
-        title: string
-        image: string
-        content: string
-        createdAt: Date
-      }[]
+      id: string
+      title: string
+      image: string
+      content: string
+      createdAt: Date
+    }[]
     | undefined = await onGetBlogPosts()
   console.log(posts)
   return (
 
     <main>
       <NavBar />
-      <section>
-        <div className="flex items-center justify-center flex-col mt-[80px] gap-4 ">
-          <span className="text-orange bg-orange/20 px-4 py-2 rounded-full text-sm">
-            An AI powered sales assistant chatbot
-          </span>
-          <Image
-            src="/images/logo.png"
-            width={500}
-            height={100}
-            alt="Logo"
-            className="max-w-lg object-contain"
-          />
-          <p className="text-center max-w-[500px]">
-            Your AI powered sales assistant! Embed TirbusoN AI into any website
-            with just a snippet of code!
-          </p>
-          <Button className="bg-orange font-bold text-white px-4">
-            Start For Free
-          </Button>
+      <div className="relative w-full h-screen overflow-hidden border-b border-solid border-zinc-100">
+        <Link
+          href="/dashboard">
+
+          <video
+            className="absolute top-0 left-0 w-full  object-contain"
+            autoPlay
+            muted
+            loop
+          >
+            <source src="/images/Convexus.mp4" type="video/mp4" />
+            Tarayıcınız bu videoyu desteklemiyor.
+          </video>
+        </Link>
+
+      </div>
+      <section >
+        <div className="flex items-center justify-center flex-col  py-10  gap-4 border-b border-solid border-zinc-100">
+
           <Image
             src="/images/iphoneTirbusoN.png"
-            width={400}
-            height={100}
+            width={300}
+            height={80}
             alt="Logo"
             className="max-w-lg object-contain"
           />
         </div>
       </section>
-      <section className="flex justify-center items-center flex-col gap-4 mt-10">
+      <section className="flex justify-center items-center  flex-col gap-4 mt-10">
         <h2 className="text-4xl text-center"> Choose what fits you right</h2>
         <p className="text-muted-foreground text-center max-w-lg">
           Our straightforward pricing plans are tailored to meet your needs. If
           {" you're"} not ready to commit you can get started for free.
         </p>
       </section>
-      <div className="flex  justify-center gap-4 flex-wrap mt-6">
+      <div className="flex justify-center gap-4 flex-wrap mt-6 pb-10 border-b border-solid border-zinc-100">
+  
+
         {pricingCards.map((card) => (
           <Card
             key={card.title}
@@ -135,6 +137,6 @@ export default async function Home() {
             </Link>
           ))}
       </section>
-    </main>
+    </main >
   );
 }

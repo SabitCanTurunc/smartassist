@@ -10,8 +10,9 @@ const Page = (props: Props) => {
   return (
     <>
       <InfoBar />
-      <div className="overflow-y-auto w-full chat-window flex-1 h-0 flex flex-col gap-10">
+      <div className="overflow-y-auto w-full chat-window flex-1 h-0 flex flex-col gap-10 px-5">
         <BillingSettings />
+        
         <DarkModetoggle />
         <ChangePassword />
       </div>

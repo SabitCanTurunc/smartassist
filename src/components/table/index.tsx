@@ -16,13 +16,13 @@ import {
     return (
       <Table className="rounded-t-xl overflow-hidden">
         <TableHeader>
-          <TableRow className="bg-grandis">
+          <TableRow className="bg-orange">
             {headers.map((header, key) => (
               <TableHead
                 key={key}
                 className={cn(
                   key == headers.length - 1 && 'text-right',
-                  'text-black'
+                  'text-white'
                 )}
               >
                 {header}

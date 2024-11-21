@@ -28,9 +28,9 @@ export const MinMenu = ({
   domains,
 }: MinMenuProps) => {
   return (
-    <div className="p-3 flex flex-col items-center h-full">
+    <div className="px-3 pt-2 flex flex-col items-center h-full bg-lightBlack ">
       <span className="animate-fade-in opacity-0 delay-300 fill-mode-forwards cursor-pointer">
-      <MenuLogo onClick={onShrink} src='https://res.cloudinary.com/dquzrdxog/image/upload/v1728334605/CarRental/2016a9a3-deea-4454-a761-f17460d1c6d1.png'  />
+      <MenuLogo onClick={onShrink} src='images/logo2.gif'  />
 
       </span>
       <div className="animate-fade-in opacity-0 delay-300 fill-mode-forwards flex flex-col justify-between h-full pt-10 ">

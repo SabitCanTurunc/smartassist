@@ -62,7 +62,7 @@ const Messenger = (props: Props) => {
           </Button>
         </div>
         <span>
-          <PaperclipIcon className='text-muted-foreground' />
+          {/* <PaperclipIcon className='text-muted-foreground' /> */}
         </span>
       </form>
     </div>
