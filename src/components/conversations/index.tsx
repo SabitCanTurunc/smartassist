@@ -12,28 +12,30 @@ import TabsMenu from '../tabs'
 
 type Props = {
   domains?:
-  | {
-    name: string
-    id: string
-    icon: string
-  }[]
-  | undefined
+    | {
+        name: string
+        id: string
+        icon: string
+      }[]
+    | undefined
 }
 
 const ConversationMenu = ({ domains }: Props) => {
   const { register, chatRooms, loading, onGetActiveChatMessages } =
     useConversation()
 
+  // Unread chatRooms filtresi: sadece 'seen' değeri 'false' olanları alıyoruz
+  const unreadChatRooms = chatRooms.filter(
+    (room) => room.chatRoom[0].message[0]?.seen === false
+  )
+
   return (
     <div className="py-3 px-0">
       <TabsMenu triggers={TABS_MENU}>
-        <TabsContent value="unread">
-          <ConversationSearch
-            domains={domains}
-            register={register}
-          />
+        <TabsContent value="all">
+          <ConversationSearch domains={domains} register={register} />
           <div className="flex flex-col">
-            <div className=" flex-col h-full">
+            <div className="flex-col h-full">
               <div className="flex-1 overflow-y-auto max-h-auto">
                 <Loader loading={loading}>
                   {chatRooms.length ? (
@@ -41,7 +43,9 @@ const ConversationMenu = ({ domains }: Props) => {
                       <ChatCard
                         seen={room.chatRoom[0].message[0]?.seen}
                         id={room.chatRoom[0].id}
-                        onChat={() => onGetActiveChatMessages(room.chatRoom[0].id)}
+                        onChat={() =>
+                          onGetActiveChatMessages(room.chatRoom[0].id)
+                        }
                         createdAt={room.chatRoom[0].message[0]?.createdAt}
                         key={room.chatRoom[0].id}
                         title={room.email!}
@@ -54,28 +58,42 @@ const ConversationMenu = ({ domains }: Props) => {
                 </Loader>
               </div>
             </div>
-
           </div>
         </TabsContent>
-        <TabsContent value="all">
-          <Separator
-            orientation="horizontal"
-            className="mt-5"
-          />
-          all
+        <TabsContent value="unread">
+          <ConversationSearch domains={domains} register={register} />
+          <div className="flex flex-col">
+            <div className="flex-col h-full">
+              <div className="flex-1 overflow-y-auto max-h-auto">
+                <Loader loading={loading}>
+                  {unreadChatRooms.length ? (
+                    unreadChatRooms.map((room) => (
+                      <ChatCard
+                        seen={room.chatRoom[0].message[0]?.seen}
+                        id={room.chatRoom[0].id}
+                        onChat={() =>
+                          onGetActiveChatMessages(room.chatRoom[0].id)
+                        }
+                        createdAt={room.chatRoom[0].message[0]?.createdAt}
+                        key={room.chatRoom[0].id}
+                        title={room.email!}
+                        description={room.chatRoom[0].message[0]?.message}
+                      />
+                    ))
+                  ) : (
+                    <CardDescription>No unread chats</CardDescription>
+                  )}
+                </Loader>
+              </div>
+            </div>
+          </div>
         </TabsContent>
         <TabsContent value="expired">
-          <Separator
-            orientation="horizontal"
-            className="mt-5"
-          />
+          <Separator orientation="horizontal" className="mt-5" />
           expired
         </TabsContent>
         <TabsContent value="starred">
-          <Separator
-            orientation="horizontal"
-            className="mt-5"
-          />
+          <Separator orientation="horizontal" className="mt-5" />
           starred
         </TabsContent>
       </TabsMenu>

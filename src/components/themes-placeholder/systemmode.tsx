@@ -7,14 +7,21 @@ export const SystemMode = () => {
       height="193"
       viewBox="0 0 282 193"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="diagonal-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="white" />
+          <stop offset="100%" stopColor="black" />
+        </linearGradient>
+      </defs>
       <path
         d="M0 15C0 6.71573 6.71573 0 15 0H267C275.284 0 282 6.71573 282 15V178C282 186.284 275.284 193 267 193H15C6.71573 193 0 186.284 0 178V15Z"
         fill="#F5F5F5"
       />
       <path
         d="M28 42C28 33.7157 34.7157 27 43 27H242C250.284 27 257 33.7157 257 42V193H28V42Z"
-        fill="white"
+        fill="url(#diagonal-gradient)" // Gradient applied here
       />
       <circle cx="45.5" cy="39.5" r="4.5" fill="#FF6F6F" />
       <circle cx="58.5" cy="39.5" r="4.5" fill="#FFF500" />
@@ -45,6 +52,8 @@ export const SystemMode = () => {
       <rect x="194" y="137" width="45" height="6" rx="3" fill="#585858" />
       <rect x="128" y="85" width="111" height="27" fill="#F8F8F8" />
       <rect x="137" y="85" width="102" height="27" fill="#5B5B5B" />
+
+      
     </svg>
-  );
+  );  
 };

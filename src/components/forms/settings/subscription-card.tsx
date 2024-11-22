@@ -26,7 +26,7 @@ const SubscriptionCard = ({
       <Card
         className={cn(
           'w-full cursor-pointer',
-          payment == id && 'border-orange'
+          payment == id && 'border-orangeDark'
         )}
       >
         <CardContent className="flex justify-between p-2">

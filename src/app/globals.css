@@ -155,3 +155,28 @@ body {
   width: 100% !important;
   border-radius: 20px;
 }
+
+
+/* Kaydırma çubuğu genişliği ve yüksekliği */
+::-webkit-scrollbar {
+  width: 10px; /* Yatay çubuğun yüksekliği */
+  height: 10px; /* Dikey çubuğun genişliği */
+}
+
+/* Kaydırma çubuğu arka planı (kanal) */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Kanalın arka plan rengi */
+  border-radius: 5px; /* Köşeleri yuvarlama */
+}
+
+/* Kaydırma çubuğu tutamacı */
+::-webkit-scrollbar-thumb {
+  background: #ff6600; /* Tutamaç rengi */
+  border-radius: 5px; /* Köşeleri yuvarlama */
+  border: 2px solid #f0f0f0; /* Tutamacın çevresi */
+}
+
+/* Kaydırma çubuğu köşesi */
+::-webkit-scrollbar-corner {
+  background: #f0f0f0; /* Alt sağ köşenin arka planı */
+}

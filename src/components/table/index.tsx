@@ -16,7 +16,7 @@ import {
     return (
       <Table className="rounded-t-xl overflow-hidden">
         <TableHeader>
-          <TableRow className="bg-orange">
+          <TableRow className="bg-orangeDark">
             {headers.map((header, key) => (
               <TableHead
                 key={key}

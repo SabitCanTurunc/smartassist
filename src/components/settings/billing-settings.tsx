@@ -2,7 +2,7 @@ import { onGetSubscriptionPlan } from '@/actions/settings'
 import React from 'react'
 import Section from '../section-label'
 import { Card, CardContent, CardDescription } from '../ui/card'
-import { Check, CheckCircle2, Plus } from 'lucide-react'
+import { CheckCircle2, Plus } from 'lucide-react'
 import { pricingCards } from '@/constants/landing-page'
 import SubscriptionForm from '../forms/settings/subscription-form'
 import Image from 'next/image'
@@ -19,14 +19,17 @@ const BillingSettings = async (props: Props) => {
 
   console.log(planFeatures)
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-      <div className="lg:col-span-1">
+    <Card className="flex flex-col gap-10 border shadow-lg border-white rounded-xl p-5">
+      {/* Section */}
+      <div>
         <Section
           label="Billing settings"
           message="Add payment information, upgrade and modify your plan."
         />
       </div>
-      <div className="lg:col-span-2 flex justify-start lg:justify-center ">
+
+      {/* Modal and Plan Upgrade */}
+      <div className="flex justify-center">
         <Modal
           title="Choose A Plan"
           description="Tell us about yourself! What do you do? Let’s tailor your experience so it best suits you."
@@ -44,7 +47,7 @@ const BillingSettings = async (props: Props) => {
               </Card>
             ) : (
               <Image
-                src="/images/creditcard.png"
+                src="/images/debitCard.gif"
                 width={400}
                 height={400}
                 alt="image"
@@ -55,10 +58,12 @@ const BillingSettings = async (props: Props) => {
           <SubscriptionForm plan={plan!} />
         </Modal>
       </div>
-      <div className="lg:col-span-2">
+
+      {/* Current Plan */}
+      <div>
         <h3 className="text-xl font-semibold mb-2">Current Plan</h3>
         <p className="text-sm font-semibold">{plan}</p>
-        <div className="flex gap-2 flex-col mt-2">
+        <div className="flex flex-col gap-2 mt-2">
           {planFeatures.map((feature) => (
             <div
               key={feature}
@@ -70,7 +75,7 @@ const BillingSettings = async (props: Props) => {
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   )
 }
 

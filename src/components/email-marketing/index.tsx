@@ -57,7 +57,7 @@ const EmailMarketing = ({ campaign, domains, subscription }: Props) => {
     } = useEmailMarketing()
 
     return (
-        <div className="w-full flex-1 h-0 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="w-full flex-1 h-0 grid grid-cols-1 lg:grid-cols-2 gap-10 px-5">
             <CustomerTable
                 domains={domains}
                 onId={onSetAnswersId}
@@ -77,7 +77,7 @@ const EmailMarketing = ({ campaign, domains, subscription }: Props) => {
                         title="Create a new campaign"
                         description="Add your customers and create a marketing campaign"
                         trigger={
-                            <Card className="flex gap-2 items-center px-3 cursor-pointer text-sm">
+                            <Card className="flex gap-2 items-center px-3 cursor-pointer text-sm hover:bg-orange">
                                 <Loader loading={false}>
                                     <Plus /> Create Campaign
                                 </Loader>
@@ -97,7 +97,7 @@ const EmailMarketing = ({ campaign, domains, subscription }: Props) => {
                                 type="text"
                             />
                             <Button
-                                className="w-full"
+                                className="w-full "
                                 disabled={loading}
                                 type="submit"
                             >
@@ -105,25 +105,25 @@ const EmailMarketing = ({ campaign, domains, subscription }: Props) => {
                             </Button>
                         </form>
                     </Modal>
-                    <Card className="p-2">
-                        <CardDescription className="font-bold">
+                    <Card className="p-2 hover:bg-orange">
+                        <CardDescription className="font-bold ">
                             {subscription?.credits} credits
                         </CardDescription>
                     </Card>
                 </div>
-                <div className="flex flex-col items-end mt-5 gap-3">
+                <div className="flex flex-col items-end mt-5 gap-3  ">
                     {campaign &&
                         campaign.map((camp, i) => (
                             <Card
                                 key={camp.id}
                                 className={cn(
                                     'p-5 min-w-[600px] cursor-pointer',
-                                    campaignId == camp.id ? 'bg-gray-50' : ''
+                                    campaignId == camp.id ? 'bg-gray-50 text-black' : ''
                                 )}
                                 onClick={() => onSelectCampaign(camp.id)}
                             >
                                 <Loader loading={processing}>
-                                    <CardContent className="p-0 flex flex-col items-center gap-3">
+                                    <CardContent className="p-0 flex flex-col items-center gap-3 ">
                                         <div className="flex w-full justify-between items-center">
                                             <div className="flex gap-2 items-center">
                                                 <CalIcon />
@@ -146,7 +146,7 @@ const EmailMarketing = ({ campaign, domains, subscription }: Props) => {
                                                     title="Edit Email"
                                                     description="This email will be sent to campaign members"
                                                     trigger={
-                                                        <Card className="rounded-lg cursor-pointer bg-grandis py-2 px-5 font-semibold text-sm hover:bg-orange text-gray-700">
+                                                        <Card className="rounded-lg cursor-pointer bg-grandis py-2 px-5 font-semibold text-sm hover:bg-orangeDark text-gray-700">
                                                             Edit Email
                                                         </Card>
                                                     }

@@ -1,20 +1,18 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 export const PortalBanner = () => {
   return (
-    <div className="w-full bg-muted flex justify-center py-5">
+    <div className="w-full bg-black flex justify-center">
       <Image
-        src="/images/logo2."
+        src="https://ucarecdn.com/76d1a551-c59a-493e-9ddc-64c4fcc5e032/BannerGif.gif"
         alt="LOGO"
-        sizes="100vw"
+        width={400} // Genişliği ayarlayın
+        height={200} // Yüksekliği ayarlayın
         style={{
-          width: '100px',
-          height: 'auto',
+          height: 'auto', // Görüntünün oranını korur
         }}
-        width={0}
-        height={0}
       />
     </div>
-  )
-}
+  );
+};

@@ -36,7 +36,7 @@ const Modal = ({
             <div className="flex justify-center gap-3">
               <div className="w-12 h-12 relative">
                 <Image
-                  src={`https://ucarecdn.com/2c9bd4ab-1f00-41df-bad2-df668f65a232/`}
+                  src={`https://ucarecdn.com/6789fb72-0a80-479f-bbdd-f8b78f36c284/isimsizLogo.gif`}
                   fill
                   alt="TirbusoN"
                 />

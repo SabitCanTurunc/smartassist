@@ -14,9 +14,9 @@ const CodeSnippet = ({ id }: Props) => {
     const iframe = document.createElement("iframe");
     
     const iframeStyles = (styleString) => {
-    const style = document.createElement('style');
-    style.textContent = styleString;
-    document.head.append(style);
+      const style = document.createElement('style');
+      style.textContent = styleString;
+      document.head.append(style);
     }
     
     iframeStyles('
@@ -37,17 +37,19 @@ const CodeSnippet = ({ id }: Props) => {
         let dimensions = JSON.parse(e.data)
         iframe.width = dimensions.width
         iframe.height = dimensions.height
-        iframe.contentWindow.postMessage("${id}", "http://localhost:3000/")
+        iframe.contentWindow.postMessage("${id}", 
+        "http://localhost:3000/")
     })
-        `
+  `
 
   return (
-    <div className="mt-10 flex flex-col gap-5 items-start">
+    <div className="flex flex-col gap-3 items-start p-10 overflow-y-auto">
       <Section
         label="Code snippet"
         message="Copy and paste this code snippet into the header tag of your website"
       />
-      <div className="bg-cream px-10 rounded-lg inline-block relative">
+      <div className="bg-cream px-5 py-3 rounded-lg relative max-h-96 overflow-y-auto">
+
         <Copy
           className="absolute top-5 right-5 text-gray-400 cursor-pointer"
           onClick={() => {
@@ -58,7 +60,7 @@ const CodeSnippet = ({ id }: Props) => {
             })
           }}
         />
-        <pre>
+        <pre className="overflow-x-auto max-w-full">
           <code className="text-gray-500">{snippet}</code>
         </pre>
       </div>

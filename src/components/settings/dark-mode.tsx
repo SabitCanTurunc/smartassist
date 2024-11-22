@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import { SystemMode } from '../themes-placeholder/systemmode'
 import { LightMode } from '../themes-placeholder/lightmode'
 import { DarkMode } from '../themes-placeholder/darkmode'
+import { Card } from '../ui/card'
 
 type Props = {}
 
@@ -13,7 +14,7 @@ const DarkModetoggle = (props: Props) => {
   const { setTheme, theme } = useThemeMode()
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+    <Card className="flex flex-col gap-10 border  border-white rounded-xl p-5 shadow-lg">
       <div className="lg:col-span-1">
         <Section
           label="Interface Theme"
@@ -24,32 +25,40 @@ const DarkModetoggle = (props: Props) => {
         <div
           className={cn(
             'rounded-2xl overflow-hidden cursor-pointer border-4 border-transparent',
-            theme == 'system' && 'border-orange'
+            theme == 'system' && 'border-orangeDark'
           )}
           onClick={() => setTheme('system')}
         >
           <SystemMode />
+          <p className='text-center'>System Mode</p>
+
+
         </div>
         <div
           className={cn(
             'rounded-2xl overflow-hidden cursor-pointer border-4 border-transparent',
-            theme == 'light' && 'border-orange'
+            theme == 'light' && 'border-orangeDark'
           )}
           onClick={() => setTheme('light')}
         >
           <LightMode />
+          <p className='text-center'>Light Mode</p>
+          
+
         </div>
         <div
           className={cn(
             'rounded-2xl overflow-hidden cursor-pointer border-4 border-transparent',
-            theme == 'dark' && 'border-orange'
+            theme == 'dark' && 'border-orangeDark'
           )}
           onClick={() => setTheme('dark')}
         >
           <DarkMode />
+          <p className='text-center'>Dark Mode</p>
+
         </div>
       </div>
-    </div>
+    </Card>
   )
 }
 

@@ -22,7 +22,7 @@ const MenuItem = ({ size, path, icon, label, current, onSignOut }: Props) => {
             !current
               ? 'text-gray-500'
               : current == path
-              ? 'bg-white font-bold text-black hover:bg-orangeDark'
+              ? 'bg-white font-bold text-black hover:bg-orangeDarkDark'
               : 'text-gray-500'
           )}
           href={path ? `/${path}` : '#'}
@@ -38,7 +38,7 @@ const MenuItem = ({ size, path, icon, label, current, onSignOut }: Props) => {
             !current
               ? 'text-gray-500 '
               : current == path
-              ? 'bg-white font-bold text-black hover:bg-orangeDark '
+              ? 'bg-white font-bold text-black hover:bg-orangeDarkDark '
               : 'text-gray-500 hover:bg-white' ,
             'rounded-lg py-2 my-1 '
           )}

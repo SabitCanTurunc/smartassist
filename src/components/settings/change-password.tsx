@@ -5,6 +5,7 @@ import Section from '../section-label'
 import FormGenerator from '../forms/form-generator'
 import { Button } from '../ui/button'
 import { Loader } from '../loader'
+import { Card } from '../ui/card'
 
 type Props = {}
 
@@ -12,7 +13,7 @@ const ChangePassword = (props: Props) => {
   const { register, errors, onChangePassword, loading } = useChangePassword()
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+    <Card className="flex flex-col gap-10 border shadow-lg border-white rounded-xl p-5 ">
       <div className="lg:col-span-1">
         <Section
           label="Change Password"
@@ -23,7 +24,7 @@ const ChangePassword = (props: Props) => {
         onSubmit={onChangePassword}
         className="lg:col-span-4"
       >
-        <div className="lg:w-[500px] flex flex-col gap-3">
+        <div className="lg:w-[400px] flex flex-col gap-3">
           <FormGenerator
             register={register}
             errors={errors}
@@ -40,12 +41,12 @@ const ChangePassword = (props: Props) => {
             type="text"
             inputType="input"
           />
-          <Button className="bg-grandis text-gray-700 font-semibold">
+          <Button className="bg-orange text-white font-semibold">
             <Loader loading={loading}>Change Password</Loader>
           </Button>
         </div>
       </form>
-    </div>
+    </Card>
   )
 }
 

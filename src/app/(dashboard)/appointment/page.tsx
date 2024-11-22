@@ -31,56 +31,64 @@ const Page = async (props: Props) => {
   return (
     <>
       <InfoBar />
-      <div className="grid grid-cols-1 lg:grid-cols-3 flex-1 h-0 gap-5">
-        <div className="lg:col-span-2 overflow-y-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 flex-1 h-0 gap-5 px-5">
+        <div className="lg:col-span-2 overflow-y-auto ">
           <AllAppointments bookings={domainBookings?.bookings} />
         </div>
-        <div className="col-span-1">
-          <Section
-            label="Bookings For Today"
-            message="All your bookings for today are mentioned below."
-          />
-          {bookingsExistToday.length ? (
-            bookingsExistToday.map((booking) => (
-              <Card
-                key={booking.id}
-                className="rounded-xl overflow-hidden mt-4"
-              >
-                <CardContent className="p-0 flex">
-                  <div className="w-4/12 text-xl bg-peach py-10 flex justify-center items-center font-bold">
-                    {booking.slot}
-                  </div>
-                  <div className="flex flex-col flex-1">
-                    <div className="flex justify-between w-full p-3">
-                      <p className="text-sm">
-                        Created: 
-                        <br />
-                        {String(booking.createdAt.getHours()).padStart(2, '0')}:
-                        {String(booking.createdAt.getMinutes()).padStart(2, '0')}{' '}
-                        {booking.createdAt.getHours() > 12 ? 'PM' : 'AM'}
-                      </p>
+        <div className="col-span-1 mr-5  overflow-y-auto ">
+          <div className=' rounded-t-xl p-2  bg-orangeDark text-white'>
+            <Section
+              label="Bookings For Today"
+              message="All your bookings for today are mentioned below."
+            />
 
-                      <p className="text-sm">
-                        Domain <br />
-                        {booking.Customer?.Domain?.name}
-                      </p>
+          </div>
+          <div className='border border-orangeDark rounded-b-xl'>
+
+
+            {bookingsExistToday.length ? (
+              bookingsExistToday.map((booking) => (
+                <Card
+                  key={booking.id}
+                  className="rounded-xl overflow-hidden mt-4"
+                >
+                  <CardContent className="p-0 flex">
+                    <div className="w-4/12 text-xl bg-peach py-10 flex justify-center items-center font-bold">
+                      {booking.slot}
                     </div>
-                    <Separator orientation="horizontal" />
-                    <div className="w-full flex items-center p-3 gap-2">
-                      <Avatar>
-                        <AvatarFallback>{booking.email[0]}</AvatarFallback>
-                      </Avatar>
-                      <p className="text-sm">{booking.email}</p>
+                    <div className="flex flex-col flex-1">
+                      <div className="flex justify-between w-full p-3">
+                        <p className="text-sm">
+                          Created:
+                          <br />
+                          {String(booking.createdAt.getHours()).padStart(2, '0')}:
+                          {String(booking.createdAt.getMinutes()).padStart(2, '0')}{' '}
+                          {booking.createdAt.getHours() > 12 ? 'PM' : 'AM'}
+                        </p>
+
+                        <p className="text-sm">
+                          Domain <br />
+                          {booking.Customer?.Domain?.name}
+                        </p>
+                      </div>
+                      <Separator orientation="horizontal" />
+                      <div className="w-full flex items-center p-3 gap-2">
+                        <Avatar>
+                          <AvatarFallback>{booking.email[0]}</AvatarFallback>
+                        </Avatar>
+                        <p className="text-sm">{booking.email}</p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))
-          ) : (
-            <div className="w-full flex justify-center">
-              <p>No Appointments For Today</p>
-            </div>
-          )}
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <div className="w-full flex justify-center">
+                <p>No Appointments For Today</p>
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
     </>

@@ -13,7 +13,7 @@ export const DomainUpdate = ({ name, register, errors }: DomainUpdateProps) => {
   return (
     <div className="flex gap-2 pt-5 items-end w-[400px]">
       <FormGenerator
-        label="Domain name"
+        label="Update your domain name"
         register={register}
         name="domain"
         errors={errors}
@@ -21,6 +21,13 @@ export const DomainUpdate = ({ name, register, errors }: DomainUpdateProps) => {
         inputType="input"
         placeholder={name}
       />
+      <button
+        type="submit"
+        className="bg-orangeDark text-white py-2 px-4 rounded-lg mt-4 "
+      >
+        Update Domain
+      </button>
+
     </div>
   )
 }

@@ -18,7 +18,7 @@ const InfoBar = (props: Props) => {
           </Card>
         </div>
         <Avatar>
-          <AvatarFallback className="bg-orangeDark text-white">
+          <AvatarFallback className="bg-orangeDarkDark text-white">
             <Headphones />
           </AvatarFallback>
         </Avatar>

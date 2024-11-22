@@ -76,7 +76,7 @@ const BookAppointmentDate = ({
                         booking.slot == slot.slot
                     )
                     ? 'bg-gray-300'
-                    : 'cursor-pointer border-orange hover:bg-grandis transition duration-150 ease-in-out'
+                    : 'cursor-pointer border-orangeDark hover:bg-grandis transition duration-150 ease-in-out'
                 )}
               >
                 <Input
