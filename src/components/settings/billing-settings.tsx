@@ -29,7 +29,7 @@ const BillingSettings = async (props: Props) => {
       </div>
 
       {/* Modal and Plan Upgrade */}
-      <div className="flex justify-center">
+      <div className="flex justify-center h-">
         <Modal
           title="Choose A Plan"
           description="Tell us about yourself! What do you do? Let’s tailor your experience so it best suits you."

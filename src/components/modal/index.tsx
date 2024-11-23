@@ -33,7 +33,7 @@ const Modal = ({
         <Dialog>
           <DialogTrigger asChild>{trigger}</DialogTrigger>
           <DialogContent>
-            <div className="flex justify-center gap-3">
+            <div className="flex justify-center gap-3 max-h-screen">
               <div className="w-12 h-12 relative">
                 <Image
                   src={`https://ucarecdn.com/6789fb72-0a80-479f-bbdd-f8b78f36c284/isimsizLogo.gif`}

@@ -67,14 +67,14 @@ const DomainMenu = ({ domains, min }: Props) => {
           </Loader>
         </AppDrawer>
       </div>
-      <div className="flex flex-col gap-1 text-ironside font-medium bg-white rounded-full">
+      <div className="flex flex-col gap-1 text-ironside font-medium  rounded-full">
         {domains &&
           domains.map((domain) => (
             <Link
               href={`/settings/${domain.name.split('.')[0]}`}
               key={domain.id}
               className={cn(
-                'flex gap-3 hover:bg-white rounded-full justify-center transition duration-100 ease-in-out cursor-pointer ',
+                'flex gap-3 bg-white hover:bg-orangeDark rounded-full justify-center transition duration-100 ease-in-out cursor-pointer ',
                 !min ? 'p-2' : 'py-2',
                 domain.name.split('.')[0] == isDomain && 'bg-white'
               )}

@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Loader } from '@/components/loader'
 import { Card } from '@/components/ui/card'
+import { TrashIcon } from '@heroicons/react/24/solid'
 
 const WelcomeMessage = dynamic(
   () => import('./greetings-message').then((props) => props.default),
@@ -63,20 +64,16 @@ const SettingsForm = ({ id, name, chatBot, plan }: Props) => {
               height={769}
             />
           </div>
-          <div className="flex gap-5 justify-center p-10 ">
+          <div className="flex gap-5 justify-center p-10">
             <Button
               onClick={onDeleteDomain}
               variant="destructive"
               type="button"
-              className="px-10 h-[50px]"
+              className="px-10 h-[50px] flex items-center gap-3"
             >
+              <TrashIcon className="w-5 h-5 text-white" /> 
               <Loader loading={deleting}>Delete Domain</Loader>
-            </Button>
-            <Button
-              type="submit"
-              className="w-[100px] h-[50px]"
-            >
-              <Loader loading={loading}>Save</Loader>
+              
             </Button>
           </div>
 
@@ -111,9 +108,16 @@ const SettingsForm = ({ id, name, chatBot, plan }: Props) => {
                   register={register}
                   errors={errors}
                 />
+                <Button
+                  type="submit"
+                  className="w-[100px] h-[50px]"
+                >
+                  <Loader loading={loading}>Save</Loader>
+                </Button>
               </div>
 
             </div>
+
           </Card>
         </Card>
       </div>

@@ -17,7 +17,7 @@ const SignInPage = () => {
                 type="submit"
                 className="w-full"
               >
-                Submit
+                Login
               </Button>
               <p>
                 Don’t have an account?{' '}
