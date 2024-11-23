@@ -65,7 +65,7 @@ const config = {
         // Yeni renkler burada ekleniyor
         darkBlue: '#091057',
         blue: '#024CAA',
-        orangeDark: '#EC8305',
+        orangeDark: '#ff6600',
         lightGray: '#DBD3D3',
         lightBlack:'#28282d',
       },

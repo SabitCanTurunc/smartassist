@@ -4,6 +4,7 @@ import { HELP_DESK_TABS_MENU } from '@/constants/menu'
 import React from 'react'
 import HelpDesk from './help-desk'
 import FilterQuestions from './filter-questions'
+import { Card } from '@/components/ui/card'
 
 type Props = {
   id: string
@@ -11,7 +12,8 @@ type Props = {
 
 const BotTrainingForm = ({ id }: Props) => {
   return (
-    <div className="py-5 mb-10 flex flex-col gap-5 items-start">
+    
+    <Card className="p-10 mb-10 flex flex-col gap-5 items-start border border-b-white">
       <div className="flex flex-col gap-2">
         <h2 className="font-bold text-2xl">Bot Training</h2>
         <p className="text-sm font-light">
@@ -30,7 +32,7 @@ const BotTrainingForm = ({ id }: Props) => {
           <FilterQuestions id={id} />
         </TabsContent>
       </TabsMenu>
-    </div>
+    </Card>
   )
 }
 

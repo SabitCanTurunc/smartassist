@@ -10,6 +10,8 @@ import TabsMenu from '../tabs'
 import { SideSheet } from '../sheet'
 import { CreateProductForm } from './product-form'
 import { DataTable } from '../table'
+import { Card } from '../ui/card'
+import { Separator } from '../ui/separator'
 
 type Props = {
   products: {
@@ -25,10 +27,11 @@ type Props = {
 
 const ProductTable = ({ id, products }: Props) => {
   return (
-    <div>
-      <div>
-        <h2 className="font-bold text-2xl">Products</h2>
-        <p className="text-sm font-light">
+    <Card className='p-10 mb-20 border border-b-white   gap-6 flex flex-col'>
+      <div className='gap-5'>
+      <h1 className="font-bold text-2xl gap-6 p-5">Products</h1>
+      <Separator orientation="horizontal" />
+        <p className="text-sm font-light p-5">
           Add products to your store and set them live to accept payments from
           customers.
         </p>
@@ -76,8 +79,8 @@ const ProductTable = ({ id, products }: Props) => {
                     alt="image"
                   />
                 </TableCell>
-                <TableCell>${product.name}</TableCell>
-                <TableCell>{product.price}</TableCell>
+                <TableCell>{product.name}</TableCell>
+                <TableCell>${product.price}</TableCell>
                 <TableCell className="text-right">
                   {product.createdAt.getDate()}{' '}
                   {getMonthName(product.createdAt.getMonth())}{' '}
@@ -88,7 +91,7 @@ const ProductTable = ({ id, products }: Props) => {
           </DataTable>
         </TabsContent>
       </TabsMenu>
-    </div>
+    </Card>
   )
 }
 

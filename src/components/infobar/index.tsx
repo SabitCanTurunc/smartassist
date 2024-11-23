@@ -25,7 +25,7 @@ const InfoBar = (props: Props) => {
         <Avatar>
         <AvatarImage
             src="Images/logo.png"
-            alt="@TirbusoN"
+            alt="@ConvexuS"
           />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
